@@ -112,7 +112,7 @@ function markdownFilter() {
 
 }
 
-function ViewDevCtrl() {
+function ViewDevCtrl(funnyFct, greatProvider) {
 
 }
 
