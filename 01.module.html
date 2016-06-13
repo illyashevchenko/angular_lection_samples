@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>First app</title>
+  <script src="angular.js"></script>
+</head>
+<body ng-app="firstApp" ng-strict-di>
+<main ng-controller="MyCtrl" >
+  <h1>It's completely Angular's magic</h1>
+  <input type="text"
+         ng-model="color">
+  <p ng-style="{ 'color': color }">
+    This text will change it's color
+  </p>
+  <p ng-style="{ 'background-color': color }">
+    And this - background color
+  </p>
+</main>
+<script>
+  angular.module('firstApp', []);
+</script>
+</body>
+</html>

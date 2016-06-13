@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>First app</title>
+  <script src="angular.js"></script>
+</head>
+<body ng-app="firstApp">
+<main ng-controller="MainCtrl as main">
+  <h1>It's completely Angular's magic</h1>
+  <input type="text"
+         ng-model="main.input"
+         ng-change="main.onChange($event)">
+  <div>{{ main.output }}</div>
+</main>
+<script>
+  angular.module('firstApp', [])
+      .controller('MainCtrl', function (coolRegExp) {
+        this.onChange = function () {
+          this.output = coolRegExp.exec(this.input);
+        };
+      })
+      .constant('coolPattern', '\\.js$')
+      .service('coolRegExp', ['coolPattern', RegExp]);
+</script>
+</body>
+</html>

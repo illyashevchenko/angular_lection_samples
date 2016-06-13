@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>First app</title>
+  <script src="angular.js"></script>
+</head>
+<body>
+  <main ng-app="firstApp" ng-strict-di>
+    <h1>It's completely Angular's magic</h1>
+    <input type="text"
+           ng-model="color">
+    <p ng-style="{ 'color': color }">
+      This text will change it's color
+    </p>
+    <p ng-style="{ 'background-color': color }">
+      And this - background color
+    </p>
+  </main>
+  <input type="text"
+         ng-model="color">
+  <p ng-style="{ 'color': color }">
+    This text won't change it's color
+  </p>
+  <p ng-style="{ 'background-color': color }">
+    Nor this - background color
+  </p>
+<script>
+  angular.module('firstApp', []);
+</script>
+</body>
+</html>
