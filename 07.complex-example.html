@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>First app</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet/less" type="text/css" href="07.complex-example.less"/>
+  <script src="less.min.js"></script>
+  <script src="angular.js"></script>
+  <script src="07.complex-example.js"></script>
+</head>
+<body ng-app="complexApp">
+<main ng-controller="ComplexCtrl as auth">
+  <form class="login-form">
+    <div class="form-group"
+         ng-class="{ 'has-error': auth.isLoginInvalid() }">
+      <label for="login" class="control-label">
+        {{:: auth.strings.LOGIN }}
+      </label>
+      <input type="text" id="login" name="login"
+             class="form-control"
+             placeholder="{{:: auth.strings.LOGIN_PLACEHOLDER }}"
+             ng-model="auth.login">
+      <span class="help-block"
+            ng-if="auth.isLoginInvalid()">{{ auth.getLoginErrorMessage() }}</span>
+    </div>
+    <div class="form-group"
+         ng-class="{ 'has-error': auth.isPasswordInvalid() }">
+      <label for="password" class="control-label">
+        {{:: auth.strings.PASSWORD }}
+      </label>
+      <input type="password" id="password" name="password"
+             class="form-control"
+             placeholder="{{::  auth.strings.PASSWORD_PLACEHOLDER }}"
+             ng-model="auth.password">
+      <span class="help-block"
+            ng-if="auth.isPasswordInvalid()">{{ auth.getPasswordErrorMessage() }}</span>
+    </div>
+    <button type="submit"
+            class="btn btn-default"
+            ng-disabled="auth.isFormInvalid()"
+            ng-click="auth.onSubmit()">{{:: auth.strings.SUBMIT }}
+    </button>
+    <button type="reset"
+            class="btn btn-danger">{{:: auth.strings.CLEAR }}
+    </button>
+  </form>
+</main>
+</body>
+</html>
