@@ -2,6 +2,61 @@ const loginServices = angular.module('loginServices', [])
   .constant('passwordLength', 8)
   .constant('loginLength', 6)
 
+  .provider('authStrings', function ($injector) {
+    let language         = 'en';
+    const passwordLength = $injector.get('passwordLength');
+    const loginLength    = $injector.get('loginLength');
+
+    this.setLanguage = newLanguage => {
+      if (!strings[newLanguage]) {
+        return;
+      }
+
+      language = newLanguage;
+    };
+
+    const strings = {
+      en: {
+        LOGIN   : 'Login',
+        PASSWORD: 'Password',
+        SUBMIT  : 'Submit',
+        CLEAR   : 'Clear',
+
+        LOGIN_PLACEHOLDER   : 'Please enter login...',
+        PASSWORD_PLACEHOLDER: 'Please enter password...',
+
+        NO_PASSWORD       : 'Password is required',
+        PASSWORD_LENGTH   : `Password should be ${ passwordLength } symbols length minimum`,
+        PASSWORD_NUMBERS  : 'Password should contain numbers',
+        PASSWORD_LOWERCASE: 'Password should contain Lowercase letters',
+        PASSWORD_UPPERCASE: 'Password should contain Uppercase letters',
+        NO_LOGIN          : 'Login is required',
+        LOGIN_LENGTH      : `Login should be ${ loginLength } symbols length minimum`
+      },
+
+      ua: {
+        LOGIN   : 'Логін',
+        PASSWORD: 'Пароль',
+        SUBMIT  : 'Підтвердити',
+        CLEAR   : 'Очистити',
+
+        LOGIN_PLACEHOLDER   : 'Введіть логин...',
+        PASSWORD_PLACEHOLDER: 'Введіть пароль...',
+
+        NO_PASSWORD       : 'Пароль обов\'язковий',
+        PASSWORD_LENGTH   : `Пароль повинен бути ${ passwordLength } символів мінімум`,
+        PASSWORD_NUMBERS  : 'Пароль має містити цифри',
+        PASSWORD_LOWERCASE: 'Пароль має містити маленькі літери',
+        PASSWORD_UPPERCASE: 'Пароль має містити великі літери',
+        NO_LOGIN          : 'Логін обов\'язковий',
+        LOGIN_LENGTH      : `Логін повинен бути ${ loginLength } символів мінімум`
+      }
+    };
+
+
+    this.$get = () =>
+      () => strings[language]
+  })
 
   .value('uppercasePattern', '[A-Z]')
   .value('lowercasePattern', '[a-z]')
@@ -65,63 +120,7 @@ const loginServices = angular.module('loginServices', [])
       }
     }
   })
-
-
-  .provider('authStrings', function ($injector) {
-    let language         = 'en';
-    const passwordLength = $injector.get('passwordLength');
-    const loginLength    = $injector.get('loginLength');
-
-    this.setLanguage = newLanguage => {
-      if (!strings[newLanguage]) {
-        return;
-      }
-
-      language = newLanguage;
-    };
-
-    const strings = {
-      en: {
-        LOGIN   : 'Login',
-        PASSWORD: 'Password',
-        SUBMIT  : 'Submit',
-        CLEAR   : 'Clear',
-
-        LOGIN_PLACEHOLDER   : 'Please enter login...',
-        PASSWORD_PLACEHOLDER: 'Please enter password...',
-
-        NO_PASSWORD       : 'Password is required',
-        PASSWORD_LENGTH   : `Password should be ${ passwordLength } symbols length minimum`,
-        PASSWORD_NUMBERS  : 'Password should contain numbers',
-        PASSWORD_LOWERCASE: 'Password should contain Lowercase letters',
-        PASSWORD_UPPERCASE: 'Password should contain Uppercase letters',
-        NO_LOGIN          : 'Login is required',
-        LOGIN_LENGTH      : `Login should be ${ loginLength } symbols length minimum`
-      },
-
-      ua: {
-        LOGIN   : 'Логін',
-        PASSWORD: 'Пароль',
-        SUBMIT  : 'Підтвердити',
-        CLEAR   : 'Очистити',
-
-        LOGIN_PLACEHOLDER   : 'Введіть логин...',
-        PASSWORD_PLACEHOLDER: 'Введіть пароль...',
-
-        NO_PASSWORD       : 'Пароль обов\'язковий',
-        PASSWORD_LENGTH   : `Пароль повинен бути ${ passwordLength } символів мінімум`,
-        PASSWORD_NUMBERS  : 'Пароль має містити цифри',
-        PASSWORD_LOWERCASE: 'Пароль має містити маленькі літери',
-        PASSWORD_UPPERCASE: 'Пароль має містити великі літери',
-        NO_LOGIN          : 'Логін обов\'язковий',
-        LOGIN_LENGTH      : `Логін повинен бути ${ loginLength } символів мінімум`
-      }
-    };
-
-
-    this.$get = () =>
-      () => strings[language]
-  })
+  
   .name;
 
 
