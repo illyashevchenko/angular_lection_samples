@@ -130,8 +130,8 @@ class ComplexCtrl {
     this.strings          = $injector.get('authStrings')();
   }
 
-  onSubmit() {
-
+  onSubmit($event) {
+    console.log('On submit with event: ', $event);
   }
 
   isFormInvalid() {

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Templates in Angular JS</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet/less" type="text/css" href="07.complex-example.less"/>
+  <script src="less.min.js"></script>
+  <script src="angular.js"></script>
+  <script src="07.complex-example.js"></script>
+</head>
+<body ng-app="complexApp">
+<main ng-controller="ComplexCtrl as auth">
+  <form class="login-form">
+    <div class="form-group"
+         ng-class="{ 'has-error': auth.isLoginInvalid() }">
+      <label for="login" class="control-label">
+        {{:: auth.strings.LOGIN }}
+      </label>
+      <input type="text" id="login" name="login"
+             class="form-control"
+             placeholder="{{:: auth.strings.LOGIN_PLACEHOLDER }}"
+             ng-model="auth.login">
+    </div>
+    <button type="submit"
+            class="btn btn-default"
+            ng-click="auth.onSubmit($event)">{{:: auth.strings.SUBMIT }}
+    </button>
+  </form>
+</main>
+</body>
+</html>
