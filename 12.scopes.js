@@ -14,7 +14,7 @@ class AccessCtrl {
   }
 
   setGlobalVar() {
-    this.$rootScope.title = 'Scopes in Angular JS';
+    this.$rootScope.title = 'scopes in Angular JS';
   }
 
 
@@ -46,6 +46,7 @@ class AccessCtrl {
   createBindings() {
     this.$scope.value  = 'Start';
     this.$scope.object = { property: 'Start value' };
+    this.$scope.now    = Date.now();
 
     this.$timeout(() => {
       this.$scope.value           = 'After timeout';
@@ -58,32 +59,35 @@ class AccessCtrl {
     this.$scope.firstName = 'Illia';
     this.$scope.lastName  = 'Shevchenko';
 
-    console.log(this.$scope.$eval('(firstName + " " + lastName).toUpperCase()'));
-    console.log(this.$scope.$eval('(firstName + " " + lastName).toUpperCase()', { lastName: 'Kantor' }));
+    const simpleExpression = this.$scope.$eval('(firstName + " " + lastName).toUpperCase()');
+    console.log(simpleExpression);
+
+    const overriddenLocals = this.$scope.$eval('(firstName + " " + lastName).toUpperCase()', {
+      lastName: 'Kantor'
+    });
+    console.log(overriddenLocals);
   }
 
 
-  //PSEUDO METHODS
-  bindValueExpressionPseudo() {
-    this.$scope.$watch('value', updateBinding);
-  }
-
-
-  $timeoutPseudo(callback, timeout) {
-    //after timeout
-    callback();
-    this.$rootScope.$apply();
-  }
-
-
-  doAction() {
+  doAction() { //for template highlighting
   }
 }
 
 
 angular.module('simpleApp', [])
-  .controller('AccessCtrl', AccessCtrl);
+  .controller('AccessCtrl', AccessCtrl)
+  .filter('capitalize', () =>
+    (input) => input && input.charAt(0).toUpperCase() + input.slice(1)
+  )
+  .config(($filterProvider) => {
+    $filterProvider.register('capitalize', filterFactory);
+  })
+  .controller('DateCtrl', function (dateFilter) {
+    const now = dateFilter(Date.now(), 'medium');
+    console.log(now);
+  });
 
 
-function updateBinding() {
+function filterFactory() {
+
 }

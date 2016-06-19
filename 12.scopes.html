@@ -11,12 +11,22 @@
 </head>
 <body ng-app="simpleApp">
 <main ng-controller="AccessCtrl">
-  <span>Here controller's scope can be accessed</span>
+  <h2>Here controller's scope can be accessed</h2>
+
   <div>Primitive: {{ value }}</div>
   <div>Uppercased: {{ value.slice(-3) }}</div>
+  <div>Uppercased: {{ value | uppercase }}</div>
+  <hr />
+
   <div>Object: {{ object | json }}</div>
   <div>Object not existing: {{ object.map.key }}</div>
   <div>Object not existing: {{ object.doAction() }}</div>
+
+  <hr />
+  <div>Current date: {{ now | date : 'fullDate' }}</div>
+  <hr />
+  <div>Capitalized: {{ title | capitalize }}</div>
+  <div ng-controller="DateCtrl"></div>
 </main>
 </body>
 </html>
