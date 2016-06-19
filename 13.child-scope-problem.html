@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Child scope model problem in Angular JS</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet/less" type="text/css" href="07.complex-example.less"/>
+  <script src="less.min.js"></script>
+  <script src="angular.js"></script>
+  <script src="13.child-scope-problem.js"></script>
+</head>
+<body ng-app="simpleApp">
+<main>
+  <section ng-controller="ParentScopeCtrl">
+    <h2>Child model problem</h2>
+    <p>Name (parent): {{ name }}</p>
+    <input type="text" class="form-control"
+           ng-model="name">
+    <hr/>
+    <div ng-controller="ChildScopeCtrl">
+      <p>Name (child): {{ name }}</p>
+      <input type="text" class="form-control"
+             ng-model="name">
+    </div>
+  </section>
+  <hr />
+  <button class="btn btn-default"
+          ng-click="showSolution = true">Show solution</button>
+  <section ng-controller="ParentScopeThisCtrl as parent"
+           ng-if="showSolution">
+    <h2>Child model problem solved</h2>
+    <p>Name (parent): {{ parent.name }}</p>
+    <input type="text" class="form-control"
+           ng-model="parent.name">
+    <hr/>
+    <div ng-controller="ChildScopeCtrl as child">
+      <p>Name (child): {{ parent.name }}</p>
+      <input type="text" class="form-control"
+             ng-model="parent.name">
+    </div>
+  </section>
+
+</main>
+</body>
+</html>
