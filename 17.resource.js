@@ -27,6 +27,25 @@ angular.module('simpleApp', ['ngResource'])
     }
   }))
 
+  .factory('ClassesMethods', $resource => {
+    const Classes = $resource('16.http.json', null, {
+      update: {
+        url   : '17.class-:id.json',
+        method: 'PUT'
+      }
+    });
+
+    Classes.prototype.save = function () {
+      if (this.id) {
+        return this.$update();
+      }
+      
+      return this.$save();
+    };
+
+    return Classes;
+  })
+
   .constant('pseudoConfig', {
     defaultUrl: 'default-url',
     query     : {
