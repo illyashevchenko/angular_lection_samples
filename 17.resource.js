@@ -58,7 +58,7 @@ angular.module('simpleApp', ['ngResource'])
     query() {
       const { url = config.defaultUrl, isArray, method } = config.query;
       const promise = $http[method](url);
-      const result  = isArray ? [] : {};
+      const result  = isArray ? [] : new Resource({});
 
       result.$promise = promise.then(({ data }) => {
         //transform into an Array of instances, fill the result and return to a promise chain
@@ -70,5 +70,9 @@ angular.module('simpleApp', ['ngResource'])
   }));
 
 function fillTheResult() {
+
+}
+
+function Resource() {
 
 }
