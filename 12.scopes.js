@@ -79,9 +79,9 @@ angular.module('simpleApp', [])
   .filter('capitalize', () =>
     (input) => input && input.charAt(0).toUpperCase() + input.slice(1)
   )
-  .config(($filterProvider) => {
+ /* .config(($filterProvider) => {
     $filterProvider.register('capitalize', filterFactory);
-  })
+  })*/
   .controller('DateCtrl', function (dateFilter) {
     const now = dateFilter(Date.now(), 'medium');
     console.log(now);
