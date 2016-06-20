@@ -1,0 +1,5 @@
+{
+  "id"         : 1,
+  "name"       : "Intro",
+  "description": "Why Angular JS. Single page application\nComponents architecture\nMVVM pattern briefly\nModularity and file structure\nBuilding blocks - service, filter, directive, controller and component.\nServices - for model (data) layer\n$provide service. Shortcuts for it bricks\nDependency injection\n$injector service\nTwo stages. Configuration and run"
+}

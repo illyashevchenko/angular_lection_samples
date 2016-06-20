@@ -1,0 +1,5 @@
+{
+  "id"         : 3,
+  "name"       : "Components",
+  "description": "$compile\nDirectives and components\nBindings\nTransclusion\n$parse and expressions\n$interpolate"
+}

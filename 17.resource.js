@@ -20,7 +20,12 @@ angular.module('simpleApp', ['ngResource'])
       }
     });
   })
-  .factory('Classes', $resource => $resource('16.http.json'))
+  .factory('Classes', $resource => $resource('16.http.json', null, {
+    get: {
+      url   : '17.class-:id.json',
+      method: 'GET'
+    }
+  }))
 
   .constant('pseudoConfig', {
     defaultUrl: 'default-url',

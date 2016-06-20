@@ -1,0 +1,5 @@
+{
+  "id"         : 2,
+  "name"       : "Building single page applications",
+  "description": "Templating as V. Directives and components\nScopes as VM. Digest introduction\nFilters\nControllers and controllerAs\nHistory managing\nIntroduce ui-router\nCreate states and parameters\n$http and $resource  services"
+}
