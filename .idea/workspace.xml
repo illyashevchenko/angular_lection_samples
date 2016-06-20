@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="defdbb7d-70f1-4b49-89fc-aeab39ca0fef" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/16.http.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/16.http.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/16.http.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/16.http.js" afterPath="$PROJECT_DIR$/16.http.js" />
     </list>
     <ignored path="exmaples.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,31 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="16.http.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/16.http.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="16.http.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="16.http.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/16.http.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="16.http.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/16.http.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+            <state relative-caret-position="465">
+              <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -107,8 +85,8 @@
         <option value="$PROJECT_DIR$/15.ui-router.html" />
         <option value="$PROJECT_DIR$/12.scopes.js" />
         <option value="$PROJECT_DIR$/16.http.json" />
-        <option value="$PROJECT_DIR$/16.http.js" />
         <option value="$PROJECT_DIR$/16.http.html" />
+        <option value="$PROJECT_DIR$/16.http.js" />
       </list>
     </option>
   </component>
@@ -292,12 +270,12 @@
       <workItem from="1465987221731" duration="361000" />
       <workItem from="1466333422171" duration="495000" />
       <workItem from="1466334658672" duration="9556000" />
-      <workItem from="1466402402298" duration="6890000" />
+      <workItem from="1466402402298" duration="8140000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38757000" />
+    <option name="totallyTimeSpent" value="40007000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -664,18 +642,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/16.http.js">
+    <entry file="file://$PROJECT_DIR$/16.http.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+        <state relative-caret-position="300">
+          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/16.http.html">
+    <entry file="file://$PROJECT_DIR$/16.http.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+        <state relative-caret-position="465">
+          <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
           <folding />
         </state>
       </provider>
