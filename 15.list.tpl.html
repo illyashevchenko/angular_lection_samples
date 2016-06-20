@@ -8,6 +8,7 @@
 </div>
 <ul>
   <li ng-repeat="item in list.classes | filter : list.filter | orderBy : list.order">
-    {{:: item.name }}
+    <a ui-sref=".item({ id: item.id })">{{:: item.name }}</a>
   </li>
 </ul>
+<section ui-view></section>

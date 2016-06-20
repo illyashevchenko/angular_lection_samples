@@ -12,13 +12,12 @@ class ListCtrl {
 }
 
 class ItemCtrl {
-  constructor() {
+  constructor(Classes, $stateParams) {
+    this.class = Classes.getById(+$stateParams.id);
   }
 }
 
-angular.module('simpleApp', [
-  'ui.router'
-])
+angular.module('simpleApp', ['ui.router'])
   .config(($stateProvider, $urlRouterProvider) => {
     $stateProvider
       .state('list', {
@@ -26,6 +25,12 @@ angular.module('simpleApp', [
         templateUrl : '15.list.tpl.html',
         controller  : ListCtrl,
         controllerAs: 'list'
+      })
+      .state('list.item', {
+        url         : '/:id',
+        templateUrl : '15.list-item.tpl.html',
+        controller  : ItemCtrl,
+        controllerAs: 'item'
       })
       .state('info', {
         url       : '/info',
@@ -35,14 +40,52 @@ angular.module('simpleApp', [
 
     $urlRouterProvider.otherwise('/list');
   })
+  
+  
   .factory('Classes', () => ({
     query() {
       return [{
-        name: 'Intro'
+        id         : 1,
+        name       : 'Intro',
+        description: `
+                    •	Why Angular JS. Single page application
+                    •	Components architecture
+                    •	MVVM pattern briefly
+                    •	Modularity and file structure
+                    •	Building blocks - service, filter, directive, controller and component.
+                    •	Services - for model (data) layer
+                    •	$provide service. Shortcuts for it bricks
+                    •	Dependency injection
+                    •	$injector service
+                    •	Two stages. Configuration and run`
       }, {
-        name: 'Building single page applications'
+        id         : 2,
+        name       : 'Building single page applications',
+        description: `
+                     •	Templating as V. Directives and components
+                     •	Scopes as VM. Digest introduction
+                     •	Filters
+                     •	Controllers and controllerAs
+                     •	History managing
+                     •	Introduce ui-router
+                     •	Create states and parameters
+                     • $http and $resource  services`
       }, {
-        name: 'Components'
+        id         : 3,
+        name       : 'Components',
+        description: `
+                     •	$compile
+                     •	Directives and components
+                     •	Bindings 
+                     •	Transclusion
+                     •	$parse and expressions
+                     • $interpolate`
       }];
+    },
+
+
+    getById(id) {
+      return this.query()
+        .find(item => item.id === id);
     }
   }));
