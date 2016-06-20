@@ -1,0 +1,13 @@
+<h2>A list of classes</h2>
+<div class="form-group">
+  <input type="text" class="form-control" ng-model="list.filter">
+</div>
+<div class="form-group">
+  <a class="btn btn-default" ui-sref-active="active" ui-sref=".({ order: 'asc' })">Sort asc</a>
+  <a class="btn btn-default" ui-sref-active="active" ui-sref=".({ order: 'desc' })">Sort desc</a>
+</div>
+<ul>
+  <li ng-repeat="item in list.classes | filter : list.filter | orderBy : list.order">
+    {{:: item.name }}
+  </li>
+</ul>

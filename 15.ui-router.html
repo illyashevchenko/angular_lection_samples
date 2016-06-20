@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Routing in Angular JS</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet/less" type="text/css" href="15.ui-router.less"/>
+  <script src="less.min.js"></script>
+  <script src="angular.js"></script>
+  <script src="angular-ui-router.js"></script>
+  <script src="15.ui-router.js"></script>
+</head>
+<body ng-app="simpleApp">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Angular CDP</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li ui-sref-active="active">
+          <a ui-sref="list">List</a>
+        </li>
+        <li ui-sref-active="active">
+          <a ui-sref="info">Info</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main ui-view>
+</main>
+</body>
+</html>
