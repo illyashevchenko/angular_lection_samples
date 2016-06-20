@@ -1,0 +1,15 @@
+[
+  {
+    "id"         : 1,
+    "name"       : "Intro",
+    "description": "Why Angular JS. Single page application\nComponents architecture\nMVVM pattern briefly\nModularity and file structure\nBuilding blocks - service, filter, directive, controller and component.\nServices - for model (data) layer\n$provide service. Shortcuts for it bricks\nDependency injection\n$injector service\nTwo stages. Configuration and run"
+  }, {
+  "id"         : 2,
+  "name"       : "Building single page applications",
+  "description": "Templating as V. Directives and components\nScopes as VM. Digest introduction\nFilters\nControllers and controllerAs\nHistory managing\nIntroduce ui-router\nCreate states and parameters\n$http and $resource  services"
+}, {
+  "id"         : 3,
+  "name"       : "Components",
+  "description": "$compile\nDirectives and components\nBindings\nTransclusion\n$parse and expressions\n$interpolate"
+}
+]
