@@ -1,7 +1,8 @@
 class ListCtrl {
-  constructor(Classes, $stateParams) {
+  constructor(Classes, $stateParams, $state) {
     const { order = 'asc' } =  $stateParams;
 
+    this.$state  = $state;
     this.classes = Classes.query();
     this.order   = 'name';
 
@@ -9,11 +10,17 @@ class ListCtrl {
       this.order = `-${ this.order }`;
     }
   }
+
+
+  switchBetweenStates() {
+    this.$state.go('.', { order: 'asc' }, { reload: true });
+  }
 }
 
 class ItemCtrl {
-  constructor(Classes, $stateParams) {
+  constructor(Classes, $stateParams, $state) {
     this.class = Classes.getById(+$stateParams.id);
+    this.class = Classes.getById(+$state.params.id);
   }
 }
 
@@ -26,12 +33,14 @@ angular.module('simpleApp', ['ui.router'])
         controller  : ListCtrl,
         controllerAs: 'list'
       })
+
       .state('list.item', {
         url         : '/:id',
         templateUrl : '15.list-item.tpl.html',
         controller  : ItemCtrl,
         controllerAs: 'item'
       })
+
       .state('info', {
         url       : '/info',
         template  : '<h2>This is an info page</h2>',
@@ -40,8 +49,8 @@ angular.module('simpleApp', ['ui.router'])
 
     $urlRouterProvider.otherwise('/list');
   })
-  
-  
+
+
   .factory('Classes', () => ({
     query() {
       return [{
