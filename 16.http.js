@@ -9,7 +9,7 @@ class ListCtrl {
   }
 }
 
-angular.module('simpleApp', ['ui.router'])
+angular.module('simpleApp', [])
   .controller('ListCtrl', ListCtrl)
   .factory('Classes', ($http, $log) => ({
     query() {

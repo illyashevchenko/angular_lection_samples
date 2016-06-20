@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Server interaction with $http</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet/less" type="text/css" href="07.complex-example.less"/>
+  <script src="less.min.js"></script>
+  <script src="angular.js"></script>
+  <script src="angular-resource.js"></script>
+  <script src="17.resource.js"></script>
+</head>
+<body ng-app="simpleApp" ng-controller="ListCtrl as list">
+<h2>A list of classes</h2>
+<ul>
+  <li ng-repeat="item in list.classes | filter : list.filter | orderBy : list.order">
+    <a>{{:: item.name }}</a>
+  </li>
+</ul>
+</body>
+</html>
