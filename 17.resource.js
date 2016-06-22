@@ -23,6 +23,9 @@ angular.module('simpleApp', ['ngResource'])
   .factory('Classes', $resource => $resource('16.http.json', null, {
     get: {
       url   : '17.class-:id.json',
+      params: {
+        id: '@id'
+      },
       method: 'GET'
     }
   }))
