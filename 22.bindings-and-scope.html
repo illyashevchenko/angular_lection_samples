@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet/less" type="text/css" href="20.lection-code.less"/>
+  <script src="less.min.js"></script>
+  <script src="angular.js"></script>
+  <script src="22.bindings-and-scope.js"></script>
+</head>
+<body ng-app="simpleApp">
+<main>
+  <section ng-controller="Main">
+    <h2>Here is an example if not using controllerAs and scope nesting together</h2>
+    {{ title }}
+    <div same-scope=""></div>
+  </section>
+  <hr/>
+  <section ng-controller="Main">
+    <h2>Here is an example of a child scope</h2>
+    {{ title }}
+    <div child-scope=""></div>
+  </section>
+  <hr/>
+  <section ng-controller="Main">
+    <h2>Here is an example of a isolated scope</h2>
+    {{ title }}
+    <div isolated-scope=""></div>
+  </section>
+  <hr/>
+  <section ng-controller="Main as main">
+    <h2>Here is an example of a bindings</h2>
+    <div bindings-to-scope="0"
+         title-key=":: main.titleKey"
+         items="main.list"></div>
+  </section>
+</main>
+</body>
+</html>

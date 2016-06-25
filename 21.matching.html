@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Matching directives</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet/less" type="text/css" href="20.lection-code.less"/>
+  <script src="less.min.js"></script>
+  <script src="angular.js"></script>
+  <style>
+    main * {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<main ng-app="simpleApp">
+  <match-me>Not matched</match-me>
+  <match:me>Not matched</match:me>
+  <match_me>Not matched</match_me>
+  <x-match-me>Not matched</x-match-me>
+  <x-match:me>Not matched</x-match:me>
+  <x-match_me>Not matched</x-match_me>
+  <x:match-me>Not matched</x:match-me>
+  <x:match:me>Not matched</x:match:me>
+  <x:match_me>Not matched</x:match_me>
+  <x_match-me>Not matched</x_match-me>
+  <x_match:me>Not matched</x_match:me>
+  <x_match_me>Not matched</x_match_me>
+  <data-match-me>Not matched</data-match-me>
+  <data-match:me>Not matched</data-match:me>
+  <data-match_me>Not matched</data-match_me>
+  <data:match-me>Not matched</data:match-me>
+  <data:match:me>Not matched</data:match:me>
+  <data:match_me>Not matched</data:match_me>
+  <data_match-me>Not matched</data_match-me>
+  <data_match:me>Not matched</data_match:me>
+  <data_match_me>Not matched</data_match_me>
+  <div match-me>Not matched</div>
+  <div match:me>Not matched</div>
+  <div match_me>Not matched</div>
+  <div x-match-me>Not matched</div>
+  <div x-match:me>Not matched</div>
+  <div x-match_me>Not matched</div>
+  <div x:match-me>Not matched</div>
+  <div x:match:me>Not matched</div>
+  <div x:match_me>Not matched</div>
+  <div x:match_me>Not matched</div>
+  <div x_match:me>Not matched</div>
+  <div x_match_me>Not matched</div>
+  <div x_match_me>Not matched</div>
+  <div data-match-me>Not matched</div>
+  <div data-match:me>Not matched</div>
+  <div data-match_me>Not matched</div>
+  <div data:match-me>Not matched</div>
+  <div data:match:me>Not matched</div>
+  <div data:match_me>Not matched</div>
+  <div data_match-me>Not matched</div>
+  <div data_match:me>Not matched</div>
+  <div data_match_me>Not matched</div>
+</main>
+</body>
+<script>
+  angular.module('simpleApp', [])
+//      .directive('matchMe', getDefinition)
+      .directive('matchMe', function () {
+        return {
+          restrict: 'AECM',
+          template: 'Matched!'
+        }
+      });
+
+  function getDefinition() {
+    return {};
+  }
+</script>
+</html>
