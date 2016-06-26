@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular JS Built-in directives</title>
+  <script src="angular.js"></script>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet/less" type="text/css" href="20.lection-code.less"/>
+  <script src="less.min.js"></script>
+</head>
+<body ng-app="simpleApp">
+<main ng-controller="Main as main">
+  <section>
+    <h2>ngInclude demo</h2>
+    <ng-include src="'30.include.tpl.html'"></ng-include>
+    <div ng-include="'30.include.tpl.html'"></div>
+    <!--TODO: Use setting up name to the template in a controller-->
+  </section>
+
+  <section>
+    <h2>ngIf/Show/Hide demo</h2>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"
+               ng-model="main.hide">Hide
+      </label>
+    </div>
+    <div ng-if="!main.hide">This is hidden with ngIf</div>
+    <div ng-show="!main.hide">This is hidden with ngShow</div>
+    <div ng-hide="main.hide">This is hidden with ngHide</div>
+  </section>
+
+  <section ng-switch="main.block">
+    <h2>ngSwitch demo</h2>
+    <div>
+        <input type="number"
+               ng-model="main.block">
+    </div>
+    <div ng-switch-when="1">The first block</div>
+    <div ng-switch-when="2">The second block</div>
+    <div ng-switch-default="">Default block</div>
+  </section>
+
+  <section>
+    <h2>ngStyle demo</h2>
+    <input type="text"
+           ng-model="main.color">
+    <p ng-style="{ 'color': main.color }">
+      This text will change it's color
+    </p>
+  </section>
+
+  <section>
+    <h2>ngClass demo</h2>
+    <div>
+      <input type="text"
+             ng-model="main.className"><br/>
+      <button ng-class="main.className">
+        Button
+      </button>
+    </div>
+    <div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"
+                 ng-model="main.isDanger">Is danger
+        </label>
+      </div>
+      <button class="btn"
+              ng-class="{ 'btn-danger': main.isDanger, 'btn-default': !main.isDanger }">
+        Button
+      </button>
+    </div>
+  </section>
+
+  <section>
+    <h2>ngPluralize demo</h2>
+    <input type="text" ng-model="main.personCount">
+    <ng-pluralize count="main.personCount" offset=2
+                  when="{'0': 'Nobody is viewing.',
+                     '1': '{{ main.person1 }} is viewing.',
+                     '2': '{{ main.person1 }} and {{ main.person2 }} are viewing.',
+                     'one': '{{ main.person1 }}, {{ main.person2 }} and one other person are viewing.',
+                     'other': '{{ main.person1 }}, {{ main.person2 }} and {} other people are viewing.'}">
+    </ng-pluralize>
+    <ng-pluralize count="personCount" offset=2
+                  when="{'0': 'Nobody is viewing.',
+                     '1': '{{ person1 }} is viewing.',
+                     '2': '{{ person1 }} and {{ person2 }} are viewing.',
+                     'one': '{{ person1 }}, {{ person2 }} and one other person are viewing.',
+                     'other': '{{ person1 }}, {{ person2 }} and {} other people are viewing.'}">
+    </ng-pluralize>
+  </section>
+
+  <section>
+    <h2>ngClick demo</h2>
+    <button class="btn btn-default"
+            ng-click="main.submit(main.personCount, $event)">Submit the value
+    </button>
+  </section>
+</main>
+<script>
+  angular.module('simpleApp', [])
+      .controller('Main', function ($log) {
+        this.person1     = 'Illia';
+        this.person2     = 'Dmytro';
+        this.personCount = 5;
+
+        this.submit = function (value, $event) {
+          $log.debug('Submit the value: ', value, $event);
+        };
+
+        this.className = 'btn';
+      });
+</script>
+</body>
+</html>

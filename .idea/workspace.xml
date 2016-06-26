@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="defdbb7d-70f1-4b49-89fc-aeab39ca0fef" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20.directive.tpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20.lection-code.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20.lection-code.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20.lection-code.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/21.matching.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/22.bindings-and-scope.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/22.bindings-and-scope.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/30.built-in-directives.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/30.include.tpl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/20.lection-code.html" afterPath="$PROJECT_DIR$/20.lection-code.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/20.lection-code.js" afterPath="$PROJECT_DIR$/20.lection-code.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/22.bindings-and-scope.html" afterPath="$PROJECT_DIR$/22.bindings-and-scope.html" />
     </list>
     <ignored path="exmaples.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,21 +27,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="21.matching.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/21.matching.html">
+      <file leaf-file-name="20.lection-code.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/20.lection-code.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="65" column="41" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
+            <state relative-caret-position="510">
+              <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20.lection-code.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/20.lection-code.js">
+      <file leaf-file-name="20.lection-code.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/20.lection-code.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="480">
+              <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -67,8 +64,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/51.attr-binding-watcher-demo.html" />
-        <option value="$PROJECT_DIR$/01.module.html" />
         <option value="$PROJECT_DIR$/03.config-run.html" />
         <option value="$PROJECT_DIR$/03.config-run.js" />
         <option value="$PROJECT_DIR$/04.not-a-body.html" />
@@ -90,7 +85,6 @@
         <option value="$PROJECT_DIR$/10.lection-code.html" />
         <option value="$PROJECT_DIR$/13.watchers.js" />
         <option value="$PROJECT_DIR$/13.watchers.html" />
-        <option value="$PROJECT_DIR$/12.scopes.html" />
         <option value="$PROJECT_DIR$/14.controllers.js" />
         <option value="$PROJECT_DIR$/14.controllers.html" />
         <option value="$PROJECT_DIR$/13.child-scope-problem.js" />
@@ -110,13 +104,17 @@
         <option value="$PROJECT_DIR$/13.child-scope-problem.html" />
         <option value="$PROJECT_DIR$/17.resource.js" />
         <option value="$PROJECT_DIR$/20.directive.tpl.html" />
-        <option value="$PROJECT_DIR$/20.lection-code.js" />
-        <option value="$PROJECT_DIR$/20.lection-code.html" />
         <option value="$PROJECT_DIR$/21.bindings-and-scope.html" />
         <option value="$PROJECT_DIR$/21.bindings-and-scope.js" />
         <option value="$PROJECT_DIR$/20.matching.html" />
         <option value="$PROJECT_DIR$/20.lection-code.less" />
         <option value="$PROJECT_DIR$/21.matching.html" />
+        <option value="$PROJECT_DIR$/30.include-template.html" />
+        <option value="$PROJECT_DIR$/12.scopes.html" />
+        <option value="$PROJECT_DIR$/30.built-in-directives.html" />
+        <option value="$PROJECT_DIR$/22.bindings-and-scope.html" />
+        <option value="$PROJECT_DIR$/20.lection-code.html" />
+        <option value="$PROJECT_DIR$/20.lection-code.js" />
       </list>
     </option>
   </component>
@@ -295,7 +293,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20454545" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20366599" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -323,14 +321,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/53.one-way-binding.js" />
-    <entry file="file://$PROJECT_DIR$/01.simple-example.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/00.lection-code.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -408,13 +398,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/01.simple-example.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/07.complex-example.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -479,25 +462,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12.scopes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12.scopes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#doAction#0;n#AccessCtrl#0" expanded="false" />
-            <element signature="n#!!block;n#filterFactory#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -609,38 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/22.bindings-and-scope.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/22.bindings-and-scope.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="68" column="66" selection-start-line="68" selection-start-column="66" selection-end-line="68" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/20.directive.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="32" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/20.lection-code.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="8" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/20.lection-code.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -649,18 +582,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/20.lection-code.js">
+    <entry file="file://$PROJECT_DIR$/01.simple-example.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="150">
+          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="14" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/22.bindings-and-scope.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12.scopes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12.scopes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="65" column="23" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="23" />
+          <folding>
+            <element signature="n#!!block;n#doAction#0;n#AccessCtrl#0" expanded="false" />
+            <element signature="n#!!block;n#filterFactory#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/30.include.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="42" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/20.directive.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="38" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/21.matching.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
+        <state relative-caret-position="975">
           <caret line="65" column="41" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/22.bindings-and-scope.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/30.built-in-directives.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="759">
+          <caret line="109" column="10" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/20.lection-code.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/20.lection-code.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
           <folding />
         </state>
       </provider>

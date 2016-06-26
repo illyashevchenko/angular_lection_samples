@@ -10,6 +10,42 @@ angular.module('simpleApp', [])
     };
   })
 
+  .controller('ShowExpressions', function ($parse) {
+    const getter = $parse('(firstName + " " + lastName).toUpperCase()');
+    const $scope = {
+      firstName: 'Illia',
+      lastName : 'Shevchenko'
+    };
+    const locals = {
+      lastName: 'Kantor'
+    };
+
+    console.log('===== $parse demo =====');
+    console.log(getter($scope));
+    console.log(getter($scope, locals));
+
+    const lastNameGetter = $parse('lastName');
+    const setter         = lastNameGetter.assign;
+    setter($scope, 'Andrii');
+
+    console.log($scope.lastName); //'Andrii'
+  })
+
+  .controller('ShowFunctionExpressions', function ($parse, $log) {
+    const getter = $parse('onClick(name, $event)');
+    const $scope = {
+      name: 'Illia',
+      onClick(value, $event) {
+        $log.debug('Submit the value: ', value, $event);
+      }
+    };
+    const locals = {
+      $event: new MouseEvent({})
+    };
+
+    getter($scope, locals);
+  })
+
   .directive('onlyTemplate', () => ({
     template: '<div>Some text</div>'
   }))
@@ -106,6 +142,16 @@ angular.module('simpleApp', [])
 
       return () => {
         console.log('link another simpleDirective');
+      }; // link function
+    }
+  }))
+
+  .directive('notUsedDirective', () => ({
+    restrict: 'AE',
+    compile() {
+      console.log('This message will be never shown');
+
+      return () => {
       }; // link function
     }
   }))
