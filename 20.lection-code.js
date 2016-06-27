@@ -46,6 +46,12 @@ angular.module('simpleApp', [])
     getter($scope, locals);
   })
 
+  .factory('registerTheDirective', ($compileProvider) => ({
+    directive(creator) {
+      return $compileProvider.directive('onlyTemplate', creator);
+    }
+  }))
+
   .directive('onlyTemplate', () => ({
     template: '<div>Some text</div>'
   }))
@@ -120,7 +126,7 @@ angular.module('simpleApp', [])
 
 
   .directive('simpleDirective', () => {
-    console.log('Create simpleDirective definition');
+    console.log('This message will be shown only once');
 
     return {
       restrict: 'AE',
@@ -146,15 +152,15 @@ angular.module('simpleApp', [])
     }
   }))
 
-  .directive('notUsedDirective', () => ({
-    restrict: 'AE',
-    compile() {
-      console.log('This message will be never shown');
+  .directive('notUsedDirective', () => {
+    console.log('This message will be never shown');
 
-      return () => {
-      }; // link function
-    }
-  }))
+    return {
+      restrict: 'AE',
+      link(){
+      }
+    };
+  })
 
   .directive('controlleredDirective', () => ({
     restrict    : 'AE',
@@ -162,6 +168,13 @@ angular.module('simpleApp', [])
     controller() {
       this.note = 'The recommended way to use directives';
     },
+    controllerAs: '$ctrl'
+  }))
+
+  .directive('stringControlleredDirective', () => ({
+    restrict    : 'AE',
+    template    : '<div>This is a directive with a controller: {{:: $ctrl.note }}</div>',
+    controller  : 'StringCtrl',
     controllerAs: '$ctrl'
   }));
 

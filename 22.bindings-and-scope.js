@@ -61,12 +61,21 @@ class MainCtrl {
 
 
 class DirectiveCtrl {
-  constructor($parse) {
+  constructor($parse, $log) {
     this.$parse = $parse;
+    this.$log   = $log;
   }
 
   getValue() {
     return this.$parse(`list[${ this.index }].${ this.key }`)(this);
+  }
+
+  $onInit() {
+    this.$log.debug(this.key); //'0' - always string
+  }
+
+  $postLink() {
+    this.onLink({ name: 'bindingsToScope' });
   }
 }
 
@@ -75,15 +84,30 @@ angular.module('simpleApp')
   .directive('bindingsToScope', () => ({
     rectrict  : 'A',
     scope     : {
-      key    : '<titleKey',
-      list   : '=*items',
-      binding: '=',
       index  : '@bindingsToScope',
+      binding: '=',
+      list   : '=*items',
+      key    : '<titleKey',
       onLink : '&'
     },
     controller: DirectiveCtrl,
     template  : '<div>Bindings. Key: {{ $ctrl.key }}. Index: {{ $ctrl.index }}. Value: {{ $ctrl.getValue() }}</div>',
 
     bindToController: true,
+    controllerAs    : '$ctrl'
+  }))
+  .directive('bindingsToController', () => ({
+    rectrict  : 'A',
+    scope     : {},
+    controller: DirectiveCtrl,
+    template  : '<div>Bindings. Key: {{ $ctrl.key }}. Index: {{ $ctrl.index }}. Value: {{ $ctrl.getValue() }}</div>',
+
+    bindToController: {
+      index  : '@bindingsToScope',
+      binding: '=',
+      list   : '=*items',
+      key    : '<titleKey',
+      onLink : '&'
+    },
     controllerAs    : '$ctrl'
   }));
