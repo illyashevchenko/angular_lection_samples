@@ -179,7 +179,27 @@ angular.module('simpleApp', [])
   }));
 
 class FinalCtrl {
+  constructor() {
+    //don't use bindings there - this is deprecated
+  }
 
+  $postLink() {
+    // is executed with link()
+  }
+
+  $onInit() {
+    this.key; //bindings are ready
+  }
+
+  $onChanges(changes) {
+    if (changes.key && !changes.key.isFirstChange()) {
+      this.onKeyChanged(changes.key.currentValue, changes.key.previousValue)
+    }
+  }
+
+  onKeyChanged() {
+
+  }
 }
 
 angular.module('simpleApp')

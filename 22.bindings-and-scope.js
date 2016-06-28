@@ -64,6 +64,7 @@ class DirectiveCtrl {
   constructor($parse, $log) {
     this.$parse = $parse;
     this.$log   = $log;
+    this.$log.debug('constructor: ', this.key); //undefined on latest versions
   }
 
   getValue() {
@@ -71,7 +72,7 @@ class DirectiveCtrl {
   }
 
   $onInit() {
-    this.$log.debug(this.key); //'0' - always string
+    this.$log.debug('$onInit: ', this.key); //'0' - always string
   }
 
   $postLink() {
