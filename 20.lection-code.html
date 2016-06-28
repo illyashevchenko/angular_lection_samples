@@ -19,7 +19,7 @@
   <div template-from-url=""></div>
   <div full-compile-definition=""></div>
   <div full-link-definition=""></div>
-  <div post-link-definition=""></div>
+  <div post-link-definition="" ng-if="ifNotDestroyed"></div>
   <hr />
   <simple-directive></simple-directive>
   <simple-directive></simple-directive>
@@ -33,5 +33,7 @@
   <div ng-controller="ShowFunctionExpressions">
     $parse function demo
   </div>
+  <finally ng-if="ifNotDestroyed"></finally>
+  <button class="btn btn-default" ng-click="ifNotDestroyed = !ifNotDestroyed" ng-init="ifNotDestroyed = true">Toggle destroy</button>
 </body>
 </html>

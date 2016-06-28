@@ -117,10 +117,11 @@ angular.module('simpleApp', [])
   }))
 
 
-  .directive('postLinkDefinition', () => ({
+  .directive('postLinkDefinition', ($log) => ({
     restrict: 'AE',
     template: '<div>Here is a directive with post link functions definitions (mostly used)<b simply-linked=""></b></div>',
     link ($scope, $element, $attrs) {
+      $scope.$on('$destroy', () => $log.debug('Get notified on scope destroy from link'));
     }
   }))
 
@@ -179,8 +180,9 @@ angular.module('simpleApp', [])
   }));
 
 class FinalCtrl {
-  constructor() {
+  constructor($log) {
     //don't use bindings there - this is deprecated
+    this.$log = $log;
   }
 
   $postLink() {
@@ -188,7 +190,7 @@ class FinalCtrl {
   }
 
   $onInit() {
-    this.key; //bindings are ready
+    this.$log.debug('Init binding:', this.key); //bindings are ready
   }
 
   $onChanges(changes) {
@@ -199,6 +201,10 @@ class FinalCtrl {
 
   onKeyChanged() {
 
+  }
+
+  $onDestroy() {
+    this.$log.debug('Get notified on scope destroy from hook');
   }
 }
 
@@ -211,8 +217,24 @@ angular.module('simpleApp')
     bindToController: {
       note: '<finalNote'
     },
+    require         : {
+      self: 'finally'
+    },
     controller      : FinalCtrl,
     controllerAs    : '$ctrl'
   }));
+
+
+class SimpleCtrl {
+
+}
+
+angular.module('simpleApp')
+  .component('simpleComponent', {
+    bindings: {},
+    controller() {
+    },
+    template: ''
+  });
 
 
