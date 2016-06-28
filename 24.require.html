@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular JS scopes and bindings</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet/less" type="text/css" href="20.lection-code.less"/>
+  <script src="less.min.js"></script>
+  <script src="angular.js"></script>
+  <script src="24.require.js"></script>
+</head>
+<body ng-app="simpleApp">
+<main>
+  <section>
+    <h2>Require example</h2>
+    <parent-require>
+      <child-require name="Isolated scope"></child-require>
+      <child-require name="Controllers"></child-require>
+      <child-require name="Transclusion"></child-require>
+    </parent-require>
+  </section>
+  <hr/>
+  <section>
+    <h2>Self require example</h2>
+    <parent-require>
+      <self-register name="Isolated scope"></self-register>
+      <self-register name="Controllers"></self-register>
+      <self-register name="Transclusion"></self-register>
+    </parent-require>
+  </section>
+</main>
+</body>
+</html>

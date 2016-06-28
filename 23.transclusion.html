@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular JS scopes and bindings</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet/less" type="text/css" href="23.transclusion.less"/>
+  <script src="less.min.js"></script>
+  <script src="angular.js"></script>
+  <script src="23.transclusion.js"></script>
+</head>
+<body ng-app="simpleApp">
+<main>
+  <section>
+    <h2>Transclusion example</h2>
+    <transcluded>
+      <!--todo: Uncomment to see an error-->
+    <!--<transcluded multiple-transclusion-error="">-->
+      Some transcluded content
+    </transcluded>
+  </section>
+  <hr/>
+  <section ng-controller="Main as main">
+    <h2>Transclusion scopes example</h2>
+    <div>Main title: {{ main.title }}</div>
+    <transcluded-scopes>
+      Some transcluded content
+      <div>Main title: {{ main.title }}</div>
+    </transcluded-scopes>
+  </section>
+  <hr/>
+  <section>
+    <h2>Multislot transclusion example</h2>
+    <multi-slot-transcluded>
+      <a>Menu item 1</a>
+      <a>Menu item 2</a>
+      <multi-content>
+        Some dynamic content
+      </multi-content>
+    </multi-slot-transcluded>
+  </section>
+</main>
+</body>
+</html>

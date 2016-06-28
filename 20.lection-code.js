@@ -178,4 +178,21 @@ angular.module('simpleApp', [])
     controllerAs: '$ctrl'
   }));
 
+class FinalCtrl {
+
+}
+
+angular.module('simpleApp')
+  .directive('finally', () => ({
+    restrict        : 'E',
+    template        : '<div>This is best practice directive</div>',
+    transclude      : true,
+    scope           : {},
+    bindToController: {
+      note: '<finalNote'
+    },
+    controller      : FinalCtrl,
+    controllerAs    : '$ctrl'
+  }));
+
 
