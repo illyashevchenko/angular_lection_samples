@@ -235,6 +235,10 @@ angular.module('simpleApp')
     controller() {
     },
     template: ''
+  })
+
+  .config($compileProvider => {
+    $compileProvider.debugInfoEnabled(true);
   });
 
 
